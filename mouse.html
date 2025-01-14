@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Mouse event handling</title>
+        <body>
+            <h1>Mouse eventhandling</h1>
+            <img height="300px" width="500px" src="pic1.jpg" id="first" onmouseover="setnew()" onmouseout="setold()">
+            <script> 
+            function setnew(){
+                document.getElementById("first").src="pic2.jpg"
+
+            }
+            function setold(){
+                document.getElementById("first").src="pic1.jpg"
+            }
+            
+            </script>
+        </body>
+    </head>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <tittle>eventhandling</tittle>
+    </head>
+    <h1>Javascript event handling</h1>
+    <body bgcolor="blue">
+        <p>click here to change the background color</p>
+        <button onclick="gfg_run()">click here</button>
+        <p id="eventdown" style="color:brown"></p>
+        <script>
+            var eldwn=document.getElementById("eventdown");
+            function changecolor(color){
+                document.body.style.background=color
+            }
+            function gfg_run(){
+                changecolor('yellow')
+                eldwn.innerHTML="background color changed"
+            }
+        </script>
+        <body>
+
+</html>

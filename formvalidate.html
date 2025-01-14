@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>form validation </title>
+        <center>
+            <body>
+                <form action="" id="userform" method="POST" onsubmit="return validateform()">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td><input id="name" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile No:</td>
+                            <td><input id="mobile" type="tel"></td>
+                       </tr>
+                       <tr>
+                        <td>Email:</td>
+                        <td><input id="email" type="email"></td>
+                       </tr>
+                       <tr>
+                        <td>Username:</td>
+                        <td><input id="user" type="text"></td>
+                       </tr>
+                       <tr>
+                        <td>Password:</td>
+                        <td><input id="password" type="password"></td>
+                       </tr>
+                       <tr>
+                        <td><input type="submit" value="submit"></td>
+                        <td><input type="reset" value="Reset"></td>
+                       </tr>
+                    </table>
+                </form> 
+                <script type="text/Javascript">
+                    function validateform(){
+                    var form=document.getElementById("userform");
+                    var name=form.name.value.trim();
+                    var mobile=form.mobile.value.trim();
+                    var email=form.email.value.trim();
+                    var user=form.user.value.trim();
+                    var password=form.password.value;
+                    var passwordRegex=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-z]).{8,}$/;
+                    var nameRegex=/^[A-Za-z\s]+$/;
+
+                    if (name===""){
+                        alert("enter the name");
+                        form.name.focus();
+                        return false;
+                    }
+
+                    else if(!nameRegex.test(name)){
+                        alert("enter the anem without any numbers");
+                        form.name.focus();
+                        return false;
+                    }
+                    if(email===""){
+                    alert("enter the email id");
+                       form.email.focus();
+                       return false;
+                    }
+                    if(mobile===""){
+                        alert("enter the mobile number");
+                        form.mobile.focus();
+                        return false;
+                    
+                    }else if(isNaN(mobile)){
+                        alert("enter a valid one");
+                        form.mobile.focus();
+                        return false;
+
+                    }else if(mobile.length!==10){
+                        alert("enter a mobile number with 10 digits");
+                        form.mobile.focus();
+                        return false;
+
+                    }if(user===""){
+                        alert("enter the user name")
+                        form.user.focus();
+                        return false;
+                  }if(password==="" ||!passwordRegex.test(password) ||password.length<8){
+                        alert("enter the password")
+                        form.password.focus();
+                        return false;
+                     }
+
+alert("form submitted successfully");
+                    
+            }
+
+                </script>         
+              </body>
+        </center>
+    </head>
+</html>
